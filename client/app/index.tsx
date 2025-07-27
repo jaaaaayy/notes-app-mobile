@@ -1,12 +1,17 @@
 import { Button, ButtonText } from "@/components/ui/button";
 import Ionicons from "@expo/vector-icons/Ionicons";
-import { useRouter } from "expo-router";
 import { Text, View } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import "../global.css";
 
 export default function Index() {
-  const router = useRouter();
+  const handleGoogleLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/google";
+  };
+
+  const handleGithubLogin = () => {
+    window.location.href = "http://localhost:8080/oauth2/authorization/github";
+  };
 
   return (
     <SafeAreaView className="flex-1 items-center justify-center gap-6">
@@ -16,14 +21,16 @@ export default function Index() {
         </Text>
         <Text className="text-primary-500">Continue Where You Left Off.</Text>
       </View>
-      <Button
-        variant="solid"
-        action="primary"
-        onPress={() => router.push("/notes")}
-      >
-        <Ionicons name="logo-google" size={16} color="white" />
-        <ButtonText>Continue with Google</ButtonText>
-      </Button>
+      <View className="space-y-2">
+        <Button variant="solid" action="primary" onPress={handleGoogleLogin}>
+          <Ionicons name="logo-google" size={16} color="white" />
+          <ButtonText>Continue with Google</ButtonText>
+        </Button>
+        <Button variant="solid" action="primary" onPress={handleGithubLogin}>
+          <Ionicons name="logo-github" size={16} color="white" />
+          <ButtonText>Continue with Github</ButtonText>
+        </Button>
+      </View>
     </SafeAreaView>
   );
 }
