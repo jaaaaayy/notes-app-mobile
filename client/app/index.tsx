@@ -22,12 +22,12 @@ export default function Index() {
         <Text className="text-primary-500">Continue Where You Left Off.</Text>
       </View>
       <View className="space-y-2">
-        <Button variant="solid" action="primary" onPress={handleGoogleLogin}>
-          <Ionicons name="logo-google" size={16} color="white" />
+        <Button variant="solid" action="secondary" onPress={handleGoogleLogin}>
+          <Ionicons name="logo-google" size={16} className="text-primary-500" />
           <ButtonText>Continue with Google</ButtonText>
         </Button>
-        <Button variant="solid" action="primary" onPress={handleGithubLogin}>
-          <Ionicons name="logo-github" size={16} color="white" />
+        <Button variant="solid" action="secondary" onPress={handleGithubLogin}>
+          <Ionicons name="logo-github" size={16} className="text-primary-500" />
           <ButtonText>Continue with Github</ButtonText>
         </Button>
       </View>
