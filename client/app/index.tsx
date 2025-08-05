@@ -21,7 +21,7 @@ export default function Index() {
         </Text>
         <Text className="text-primary-500">Continue Where You Left Off.</Text>
       </View>
-      <View className="space-y-2">
+      <View className="grid gap-2">
         <Button variant="solid" action="secondary" onPress={handleGoogleLogin}>
           <Ionicons name="logo-google" size={16} className="text-primary-500" />
           <ButtonText>Continue with Google</ButtonText>
